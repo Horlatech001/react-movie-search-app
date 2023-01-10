@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: grey;
+}
+.header {
+  height: 80px;
+  background-color: rgb(50, 47, 47);
+  color: white;
+  line-height: 80px;
+  padding: 0 5%;
+}
+#header-text {
+  border: 1px solid white;
+  padding: 10px;
+}
+#hero {
+  max-width: 100%;
+}
+.search-section {
+  width: 90%;
+  margin: auto;
+  padding: 15px 0;
+}
+#search-box {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  outline: none;
+}
+.movie-app {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.img-container {
+  height: 200px;
+  width: 200px;
+  margin: 10px 10px;
+  position: relative;
+  transition: transform 0.2s;
+  overflow: hidden;
+}
+.img-container img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.img-container:hover img {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.img-container:hover .overlay {
+  opacity: 1;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  font-size: 12px;
+  text-align: center;
+  color: #fcf3f6;
+}
+@media (max-width: 375px) {
+  .movie-app {
+    width: 90%;
+    margin: auto;
+  }
+  .img-container {
+    height: 130px;
+    width: 47%;
+    margin: 4px 3px;
+  }
+}
