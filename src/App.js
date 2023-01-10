@@ -24,11 +24,11 @@ function App() {
       // setSearchValue('');
     }
   };
-  
+
   useEffect(() => {
     getMovieRequest(searchValue);
   }, [searchValue]);
-  
+
   useEffect(() => {
     const retrieveSavedMovie = JSON.parse(localStorage.getItem('savedMovie'));
     setFavourites(retrieveSavedMovie);
@@ -36,9 +36,14 @@ function App() {
   }, []);
 
   const addFavouritesMovie = movie => {
-    const newFavouritesList = [...favourites, movie];
-    setFavourites(newFavouritesList);
-    saveToLocalStorage(newFavouritesList);
+    if(favourites.find(f => f.imdbID === movie.imdbID)){
+      return;
+    }else{
+      console.log(movie);
+      const newFavouritesList = [...favourites, movie];
+      setFavourites(newFavouritesList);
+      saveToLocalStorage(newFavouritesList);
+    }
   };
 
   const removeFavouritesMovie = movie => {
