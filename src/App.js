@@ -29,9 +29,12 @@ function App() {
     getMovieRequest(searchValue);
   }, [searchValue]);
 
-  useEffect(() => {
+  const retriver = () => {
     const retrieveSavedMovie = JSON.parse(localStorage.getItem('savedMovie'));
     setFavourites(retrieveSavedMovie);
+  };
+  useEffect(() => {
+    retriver();
     setSearchValue('');
   }, []);
 
@@ -40,9 +43,9 @@ function App() {
       return;
     } else {
       console.log(movie);
-      const newFavouritesList = [...favourites, movie];
-      setFavourites(newFavouritesList);
-      saveToLocalStorage(newFavouritesList);
+      favourites.push(movie);
+      saveToLocalStorage(favourites);
+      retriver();
     }
   };
 
