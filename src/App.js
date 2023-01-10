@@ -36,7 +36,6 @@ function App() {
   useEffect(() => {
     retriver();
     setSearchValue('');
-    setFavourites([]);
   }, []);
 
   const addFavouritesMovie = movie => {
