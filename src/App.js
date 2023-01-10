@@ -43,7 +43,7 @@ function App() {
       return;
     } else {
       console.log(movie);
-      favourites.push(movie);
+      favourites?.push(movie);
       saveToLocalStorage(favourites);
       retriver();
     }
