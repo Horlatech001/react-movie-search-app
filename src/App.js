@@ -36,9 +36,9 @@ function App() {
   }, []);
 
   const addFavouritesMovie = movie => {
-    if(favourites.find(f => f.imdbID === movie.imdbID)){
+    if (favourites?.find(f => f.imdbID === movie.imdbID)) {
       return;
-    }else{
+    } else {
       console.log(movie);
       const newFavouritesList = [...favourites, movie];
       setFavourites(newFavouritesList);
